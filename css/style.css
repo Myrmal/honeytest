@@ -1,0 +1,120 @@
+.content-form, .footer{
+    background-color: #2d3136;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.logo-img img{
+    width: 15rem;
+}
+
+.contact_icon img{
+    width: 15rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/*form*/
+.form-group{
+    color: #d7d7d7;
+    font-family: "Roboto Medium";
+}
+.form-control{
+    font-family: "Roboto";
+    background-color: #2d3136;
+    /*border-color: #4c4f53;*/
+    box-shadow: none;
+    color: #d7d7d7;
+}
+.form-control:invalid{
+    border-color: #4c4f53;
+}
+.form-control:focus{
+    color: #d7d7d7;
+    border-color: red;
+    background-color: #2d3136;
+    box-shadow: none;
+}
+.red{
+    color: red;
+}
+
+form .btn{
+    background-color: #be393b;
+    color: white;
+    font-family: "Roboto Bold";
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    padding:1rem;
+}
+/*form*/
+
+/*вывод сообщений*/
+.head-messages{
+    padding-top: 100px;
+    font-size: 2.5rem;
+    font-family: "Roboto Medium";
+    color: #37414e;
+}
+
+.body-messages{
+    padding-bottom: 100px;
+    word-wrap:break-word;
+}
+
+.message-content .message-card{
+    background-color: #deebde;
+    min-height: 20rem;
+    margin-top: 5rem;
+}
+
+.message-card .message-name{
+    background-color: #58ad52;
+    color: white;
+    height: 5rem;
+    padding-top: 1rem;
+    font-size: 1.6rem;
+    font-family: "Roboto Medium";
+}
+
+.message-card .message-email{
+    color: #58ad52;
+    font-size: 1.6rem;
+    padding-top: 1.5rem;
+    font-family: "Roboto Bold";
+}
+
+.message-card .message-message{
+    color: #768275;
+    font-size: 1.4rem;
+    padding-top: 1.5rem;
+    font-family: "Roboto";
+}
+
+.message-content:nth-child(2n+1) .message-card{
+    background-color: #e9eef3;
+}
+
+.message-content:nth-child(2n+1) .message-card .message-name{
+    background-color: #4b596c;
+}
+
+.message-content:nth-child(2n+1) .message-card .message-email{
+    color: #6d737b;
+}
+
+.message-content:nth-child(2n+1) .message-card .message-message{
+    color: #767582;
+    font-family: "Roboto Medium";
+}
+/*вывод сообщений*/
+
+/*футер*/
+.footer{
+}
+.footer-logo img{
+    width: 10rem;
+}
+.social img{
+    width:2.5rem;
+}
+/*футер*/

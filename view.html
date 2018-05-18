@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/roboto/roboto.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>HoneyTest</title>
+</head>
+<body>
+<main class="container-fluid">
+    <div class="row content-form">
+        <div class="offset-1 col-10">
+            <div class="row">
+                <div class="col-12 logo-img">
+                    <img src="img/logo.png" alt="logo"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 contact_icon text-center">
+                    <img src="img/contact_icon.png" alt="contact_icon"/>
+                </div>
+            </div>
+            <form id="send-message-form">
+                <div class="row">
+                    <div class="col-lg-6 align-self-end">
+                        <div class="form-group">
+                            <label class="col-form-label-lg">Имя <span class="red">*</span></label>
+                            <input id="name" class="form-control" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label-lg">E-mail <span class="red">*</span></label>
+                            <input id="email" class="form-control" type="email" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="col-form-label-lg">Комментарий <span class="red">*</span></label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button id="button" type="submit" class="btn float-right">Записать</button>
+            </form>
+        </div>
+    </div>
+    <div class="row head-messages">
+        <div class="col-12 text-center">
+            Выводим комментарии
+        </div>
+    </div>
+    <div class="row body-messages">
+        <div class="offset-2 col-8">
+            <div id="result" class="row">
+                <?php $db->resultTable(); ?>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-1 col-8 footer-logo">
+                <img src="img/logo.png" alt="logo"/>
+            </div>
+            <div class="col-1 text-right social">
+                <img src="img/vk.png" alt="vk"/>
+            </div>
+            <div class="col-1 text-left social">
+                <img src="img/fb.png" alt="fb"/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $('#send-message-form').submit(function (event) {
+       event.preventDefault();
+       submitForm();
+    });
+    function submitForm() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+
+        $.ajax({
+            type: 'POST',
+            url: 'core/ajax.php',
+            data:
+            'name='+name+'&email='+email+'&message='+message,
+            success: function (data){
+                result(data);
+            }
+        });
+    }
+    function result(data) {
+        $('#result').html(data);
+    }
+</script>
+</body>
+</html>
